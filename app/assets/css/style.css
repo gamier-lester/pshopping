@@ -3,3 +3,14 @@
 	padding: 0;
 	box-sizing: border-box;
 }
+
+#catalog .card-body {
+	height: 200px;
+}
+
+#catalog .card img {
+	/*height: 150px;*/
+	/*width: 250px;*/
+	height: 100%;
+	width: 100%;
+}
