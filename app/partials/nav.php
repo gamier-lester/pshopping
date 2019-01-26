@@ -10,7 +10,7 @@
         <a class="nav-link" href="../views/catalog.php">Catalog<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">MyCart<span class="badge badge-light">4</span></a>
+        <a class="nav-link" href="../views/cart.php">MyCart<span id="cart-badge" class="badge badge-light"><?php echo cart_count(@$_SESSION['cart']); ?></span></a>
       </li>
       <?php if(isset($_SESSION['user'])): ?>
       <li class="nav-item dropdown">

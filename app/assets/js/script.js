@@ -75,4 +75,25 @@ $(document).ready(() => {
 
 	});
 
+	$(document).on('click', '.add-to-cart', event => {
+		let itemId = $(event.target).attr('data-id');
+		let itemQuantity = $(event.target).prev().val();
+		
+		$.ajax({
+			'url': '../controllers/add_cart.php',
+			'method': 'POST',
+			'data': {
+				'itemId': itemId,
+				'itemQuantity': itemQuantity
+			}
+		}).done(() => {
+			let currentCartCount = parseInt($('#cart-badge').html());
+			let newCartCount = currentCartCount + parseInt(itemQuantity);
+			$('#cart-badge').html(newCartCount);
+			$(event.target).prev().val('');
+		});
+	});
+
+	// $
+
 });

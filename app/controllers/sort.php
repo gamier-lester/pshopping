@@ -6,6 +6,10 @@
 
 	$item_sort = [];
 
+	if(isset($_GET['all'])){
+		unset($_SESSION['item_sort']);
+	}
+
 	if(isset($_GET['category'])){
 		$_SESSION['item_sort']['category_id'] = $_GET['category'];
 	}

@@ -1,4 +1,5 @@
 <?php session_start(); ?>
+<?php require_once '../controllers/library.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

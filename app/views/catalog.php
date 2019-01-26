@@ -7,6 +7,7 @@
 			<div class="col-lg-3">
 				<ul class="list-group mb-3">
 					<p class="list-group-item">By Category</p>
+					<a href="../controllers/sort.php?all" class="list-group-item list-group-item-action">Show All</a>
 					<?php
 						$fetch_prep = $conn->prepare("SELECT * FROM categories");
 						$fetch_prep->execute();
@@ -22,8 +23,8 @@
 
 				<ul class="list-group">
 					<p class="list-group-item">By Price</p>
-					<a href="../controllers/sort.php?price=ASC">Lowest to Highest Price</a>
-					<a href="../controllers/sort.php?price=DESC">Highest to Lowest Price</a>
+					<a href="../controllers/sort.php?price=ASC" class="list-group-item list-group-item-action">Lowest to Highest Price</a>
+					<a href="../controllers/sort.php?price=DESC" class="list-group-item list-group-item-action">Highest to Lowest Price</a>
 				</ul>
 			</div>
 			<div class="col-lg-9">
@@ -56,10 +57,11 @@
 							<div class="card-body">
 								<h5 class="card-title text-center"><?php echo $item['name']; ?></h5>
 								<p class="card-text"><?php echo $item['description']; ?></p>
+								<p><?php echo '₱'.$item['price']; ?></p>
 							</div>
 							<div class="card-footer">
 								<input type="number" min="1" class="form-control form-group">
-								<button data-id="<?php echo $item['id']; ?>" class="btn-block btn btn-primary">Add to cart</button>
+								<button data-id="<?php echo $item['id']; ?>" class="btn-block btn btn-primary add-to-cart">Add to cart</button>
 							</div>
 						</div>
 					</div>
